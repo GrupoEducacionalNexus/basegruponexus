@@ -24,7 +24,7 @@ class Aparelho(models.Model):
 
 class Emprestimo(models.Model):
     def __str__(self):
-        return self.user.get_username() + ' ' + self.aparelho.marca + ' ' + self.aparelho.modelo + ' ' + self.aparelho.status.nome
+        return self.user.get_username() + ' solicitou o emprestimo da maquina ' + self.aparelho.marca + ' ' + self.aparelho.modelo + ' - situação: ' + self.aparelho.status.nome
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     aparelho = models.ForeignKey(Aparelho, related_name='aparelhos', on_delete=models.CASCADE)
